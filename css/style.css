@@ -1,0 +1,212 @@
+@font-face {
+    font-family: worksans;
+    src: url('./WorkSans.woff') format('woff');
+}
+@font-face {
+  font-family: vazir;
+  src: url('./Vazir.woff') format('woff');
+}
+@font-face {
+  font-family: vazir_bold;
+  src: url('./Vazir-Bold.woff') format('woff');
+  font-weight: bold;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    font-family: vazir , worksans;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+}
+.radar-wrapper{
+    background-color: rgb(147, 226, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 58%;
+    height: 100%;
+}
+
+/* circle pulsing */
+#container {
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .circle {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255,.6);
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    opacity: 0;
+    animation: scaleIn 5s infinite ease-in
+  }
+
+  .item {
+    z-index: 100;
+    padding: 5px;
+  }
+
+  .item i {
+    color: #fff;
+    font-size: 3.4rem;
+  }
+  #container p {
+    color: #fff;
+    font-size: 1.2rem;
+    position: absolute;
+    left: calc(50% - 34px);
+  }
+  @keyframes scaleIn {
+0% {
+  transform: scale(0, 0);
+  opacity: .3;
+}
+100% {
+  transform: scale(3.5, 3.5);
+  opacity: 0;
+}
+}
+
+/* Radar */
+.radar .pointer {
+    position: absolute;
+    z-index: -1;
+    left: 10.5820106%;
+    right: 10.5820106%;
+    top: 10.5820106%;
+    bottom: 50%;
+    will-change: transform;
+    transform-origin: 50% 100%;
+    border-radius: 50% 50% 0 0/100% 100% 0 0;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.01) 40%, rgba(255, 255, 255, 0) 100%);
+            clip-path: polygon(40% 0, 40% 10%, 50% 100%, 0 10%, 0 0);
+            animation: rotate360 4s infinite linear;
+  }
+  
+  .radar .pointer:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -1px;
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 3px rgba(251, 255, 255, 0.6);
+    border-radius: 9px;
+  }
+  
+  .shadow {
+    position: absolute;
+    left: 11%;
+    top: 11%;
+    right: 11%;
+    bottom: 11%;
+    margin: auto;
+    border-radius: 9999px;
+    box-shadow: 0 0 66px 6px #A51414;
+    -webkit-animation: shadow 1s infinite ease;
+            animation: shadow 1s infinite ease;
+  }
+  @keyframes rotate360 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes shadow {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  /* Login form */
+  .form-wrapper{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42%;
+    height: 100%;
+    direction: rtl;
+    color: rgb(155, 155, 155);
+    padding: 4rem 6rem 0 6rem ;
+}
+h3{
+  color: #000;
+  align-self: start;
+  margin-bottom: 1rem;
+}
+p{
+  align-self: start;
+  margin-bottom: 4rem;
+}
+form{
+  width: 100%;
+}
+.input{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(218, 218, 218);
+  margin-bottom: 3rem;
+  position: relative;
+}
+.input input { 
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: .4rem 0;
+}
+.input i{
+  font-size: .6rem;
+  position: absolute;
+  left: 10px;
+}
+input::placeholder{
+  color: rgb(194, 194, 194);
+  font-family: vazir;
+}
+.secure{
+  width: 65%;
+}
+/* .input input[type='text'],.input input[type='password']{
+
+} */
+.button input{
+  background-color: rgb(24, 163, 255);
+  color: #fff;
+  font-family: vazir;
+}
+.forgot{
+  align-self: flex-start;
+  margin-top: 2rem;
+  font-size: .6rem;
+}
+.forgot input{
+  vertical-align: middle;
+}
